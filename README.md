@@ -81,6 +81,13 @@ Ce projet est une application web développée en PHP suivant une architecture M
 
 ---
 
+-**Statistiques du projet**
+rioulantoine --> 78 commits
+jaajjj --> 58 commits
+MarhadourM --> 17 commits
+
+![alt text](image.png)
+
 ## URLs de l’application
 
 Base de l’URL :  
