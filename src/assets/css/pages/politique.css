@@ -1,0 +1,127 @@
+/* ===== POLITIQUE PAGE ===== */
+.politique_intro {
+  width: 100%;
+  background: #fff;
+  border-radius: 0;
+  padding: 28px 0 24px 0;
+}
+
+.politique_intro p {
+  font-size: 1.18em;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  line-height: 1.6;
+  text-align: justify;
+  max-width: 900px;
+  margin: auto;
+}
+
+.politique_engagements,
+.politique_objectifs,
+.politique_conseils,
+.politique_campus {
+  background: #f6fafd;
+  width: 100%;
+  padding: 30px 0 22px 0;
+  text-align: center;
+}
+
+.politique_subtitle {
+  font-size: 2em;
+  color: #24358e;
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 0.05em;
+}
+
+.politique_list,
+.politique_objectifs ul,
+.politique_conseils ul,
+.politique_campus ul {
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.politique_list li,
+.politique_objectifs li,
+.politique_conseils li,
+.politique_campus li {
+  background: #fff;
+  margin: 18px 0;
+  padding: 20px 24px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(34, 50, 170, 0.06);
+  font-size: 1.09em;
+  color: #1f2121;
+  line-height: 1.63;
+  font-weight: 500;
+  text-align: left;
+}
+
+.politique_list li::before,
+.politique_objectifs li::before,
+.politique_conseils li::before,
+.politique_campus li::before {
+  content: "•";
+  color: var(--color-primary);
+  font-size: 1.08em;
+  font-weight: bold;
+  margin-right: 13px;
+}
+
+.politique_list strong,
+.politique_campus strong {
+  color: #193fc9;
+  font-weight: bold;
+  font-size: 1.07em;
+}
+
+.politique_statlink {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.politique_objectifs span {
+  color: #ca8000;
+  font-weight: 800;
+  font-style: italic;
+  margin-left: 6px;
+}
+
+@media (max-width: 970px) {
+  .politique_subtitle {
+    font-size: 1.4em;
+  }
+
+  .politique_intro p,
+  .politique_list li,
+  .politique_objectifs li,
+  .politique_conseils li,
+  .politique_campus li {
+    font-size: 1em;
+    padding: 17px 8vw;
+  }
+
+  .politique_engagements,
+  .politique_objectifs,
+  .politique_conseils,
+  .politique_campus {
+    padding: 22px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .politique_subtitle {
+    font-size: 0.97em;
+  }
+
+  .politique_intro p,
+  .politique_list li {
+    font-size: 0.98em;
+    padding: 13px 4vw;
+  }
+}

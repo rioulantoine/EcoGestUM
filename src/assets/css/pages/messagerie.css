@@ -1,0 +1,344 @@
+/* ===== PAGE MESSAGERIE ===== */
+
+.messagerie-page {
+  min-height: 100vh;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  font-family: "Poppins", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messagerie-container {
+  width: 820px;
+  background: var(--color-white);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30, 30, 30, 0.13);
+  display: flex;
+  overflow: hidden;
+  margin: 30px auto;
+}
+
+/* --- Colonne liste des conversations --- */
+
+.messagerie-list {
+  width: 260px;
+  background: var(--color-gray-light);
+  border-right: 1px solid var(--color-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+.messagerie-list-header {
+  padding: 16px 18px 10px 18px;
+  background: #1b2963;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.messagerie-list-title {
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+.messagerie-list-subtitle {
+  font-size: 0.9em;
+  color: #e3e7ff;
+}
+
+/* Liste scrollable */
+
+.messagerie-list-scroll {
+  flex: 1;
+  overflow-y: auto;
+  background: #f3f4fb;
+}
+
+/* Item + état lu / non lu */
+
+.messagerie-list-item {
+  padding: 20px 18px;
+  color: var(--color-dark);
+  border-bottom: 1px solid var(--color-gray);
+  transition: background 0.2s, color 0.2s, font-weight 0.2s;
+  display: block;
+  position: relative;
+}
+
+.messagerie-list-item.active,
+.messagerie-list-item:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.messagerie-list-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.messagerie-list-item-name {
+  font-size: 0.98em;
+  font-weight: 600;
+}
+
+.messagerie-list-item-date {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.messagerie-list-item-last {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Bouton suppression conversation */
+
+.messagerie-delete-btn {
+  color: #c32f2f;
+  background: #fff2f4;
+  border-radius: 50%;
+  margin-left: 8px;
+  padding: 0 7px;
+  font-size: 18px;
+  opacity: 0.7;
+  transition: background 0.22s, opacity 0.21s, color 0.2s;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.messagerie-delete-btn:hover {
+  background: #fceaea;
+  color: #f08787;
+  opacity: 1;
+}
+
+/* --- Formulaire ajout conversation --- */
+
+.messagerie-add-conv {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 0 0;
+  padding: 4px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(31, 41, 99, 0.05);
+  width: 100%;
+}
+
+.messagerie-email-input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1.5px solid #dde2ef;
+  width: calc(100% - 90px);
+  border-radius: 8px;
+  font-size: 1em;
+  background: #f8fafc;
+  transition: border 0.24s, box-shadow 0.23s;
+  outline: none;
+}
+
+.messagerie-email-input:focus {
+  border: 1.5px solid var(--color-primary);
+  background: #fff;
+  box-shadow: 0 4px 10px #c85a2c20;
+}
+
+.messagerie-add-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.22s, box-shadow 0.22s;
+  box-shadow: 0 2px 7px rgba(200, 90, 44, 0.09);
+}
+
+.messagerie-add-btn:hover {
+  background: #b14f25;
+  box-shadow: 0 6px 16px #c85a2c2a;
+}
+
+.messagerie-error {
+  margin-top: 10px;
+  color: #d22525;
+  background: #fde7e7;
+  border-left: 4px solid #e23737;
+  border-radius: 7px;
+  font-weight: 600;
+  padding: 8px 13px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  animation: msgErrFadeIn 0.28s;
+  display: block;
+}
+
+@keyframes msgErrFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* --- Zone de chat --- */
+
+.messagerie-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  background: var(--color-white);
+}
+
+.messagerie-chat-header {
+  padding: 14px 22px;
+  background: linear-gradient(90deg, #29409e 45%, #77b9f5 100%);
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid #e3e9f7;
+}
+
+.messagerie-chat-header-title {
+  font-size: 1.02em;
+  margin: 0;
+}
+
+.messagerie-chat-header-sub {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Messages list */
+
+.messagerie-chat-messages {
+  flex: 1;
+  padding: 22px 18px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Bulle message */
+
+.messagerie-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin-bottom: 10px;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background: var(--color-gray-light);
+  color: var(--color-dark);
+}
+
+.messagerie-message.self {
+  align-self: flex-end;
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.messagerie-message.other {
+  align-self: flex-start;
+}
+
+.message-content {
+  font-size: 1.07em;
+  margin-bottom: 4px;
+}
+
+.message-date {
+  font-size: 0.94em;
+  color: var(--color-gray);
+  text-align: right;
+}
+
+/* Formulaire d’envoi */
+
+.messagerie-form {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  border-top: 1px solid #e3e9f7;
+  background: #fafafc;
+}
+
+.messagerie-form input[type="text"] {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 7px;
+  border: 1px solid #e4e4e4;
+  font-size: 1em;
+  margin-right: 10px;
+  outline: none;
+}
+
+.messagerie-form input[type="text"]:focus {
+  border-color: var(--color-primary);
+}
+
+.messagerie-form button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.messagerie-form button:hover {
+  background: #b14f25;
+}
+
+/* Responsive smartphone/tablette */
+
+@media (max-width: 800px) {
+  .messagerie-container {
+    flex-direction: column;
+    width: 99vw;
+    border-radius: 10px;
+  }
+
+  .messagerie-list,
+  .messagerie-chat {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100vw;
+  }
+
+  .messagerie-add-conv {
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px;
+  }
+
+  .messagerie-email-input,
+  .messagerie-add-btn {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .messagerie-page {
+    padding: 0 1vw;
+  }
+}

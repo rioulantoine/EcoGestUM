@@ -1,0 +1,59 @@
+/*Page erreur 404*/
+body {
+  background: #f5f8fc;
+  margin: 0;
+  height: 100vh;
+  font-family: Poppins, Arial, sans-serif;
+}
+
+.error-main-box {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.error-gif {
+  width: 230px;
+  max-width: 80vw;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px #17366d18;
+}
+
+.error-title {
+  font-size: 2.3em;
+  color: #24458c;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.error-desc {
+  font-size: 1.15em;
+  color: #465063;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.error-btn-home {
+  background: #d4451b;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.06em;
+  font-weight: 600;
+  padding: 13px 36px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 12px #d4451b24;
+  transition: background 0.18s;
+  margin-top: 14px;
+}
+.error-btn-home:hover {
+  background: #a9330e;
+}

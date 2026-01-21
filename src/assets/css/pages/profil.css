@@ -1,0 +1,317 @@
+/* Page profil utilisateur */
+.profil-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profil-container {
+  width: 730px;
+  max-width: 97vw;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30, 30, 30, 0.13);
+  margin: 38px auto;
+  padding: 0;
+  position: relative;
+}
+
+.profil-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #29409e 45%, #77b9f5 100%);
+  border-radius: 18px 18px 0 0;
+  padding: 20px 32px 18px 22px;
+}
+
+.profil-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profil-header-arrow {
+  background: none;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.profil-header-title {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.profil-header-id {
+  color: #e3e9f7;
+  font-size: 0.9em;
+}
+
+.profil-header-logo {
+  height: 44px;
+  width: auto;
+}
+
+.profil-main-card {
+  padding: 28px 36px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profil-info-align {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+
+.profil-avatar {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(10, 10, 20, 0.11);
+}
+
+.profil-nom {
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.profil-email {
+  font-size: 1em;
+  color: #5276db;
+}
+
+.profil-fonction {
+  color: #898989;
+}
+
+.profil-champs-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+  margin: 18px 0 10px;
+}
+
+.profil-champs-col,
+.profil-champs-full {
+  display: flex;
+  flex-direction: column;
+}
+
+.profil-champs-full {
+  grid-column: span 2;
+  gap: 8px;
+  width: 100%;
+}
+
+.profil-label-email {
+  font-size: 0.98em;
+  color: #2e2d5d;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.profil-champs-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  caret-color: black;
+}
+
+.profil-champs-inline input[type="email"] {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.profil-btn-modif {
+  margin-left: 0;
+  white-space: nowrap;
+  padding: 7px 22px;
+  background: #2984f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.98em;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.profil-champs-table label {
+  font-size: 0.97em;
+  color: #2e2d5d;
+}
+
+.profil-editable {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profil-editable .icon-edit {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url('data:image/svg+xml;utf8,<svg height="24" width="24" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24"><path d="m15.232 5.232 3.536 3.536M9 11l3.536-3.536a2 2 0 0 1 2.828 0l3.536 3.536a2 2 0 0 1 0 2.828l-7.072 7.072A2 2 0 0 1 7.29 18.29l-2.638-2.637A2 2 0 0 1 4 14.414l7.072-7.072Z"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.profil-champs-table input {
+  border: 1px solid #e4e4e4;
+  background: #f5f6fa;
+  color: #2e2d5d;
+  border-radius: 7px;
+  padding: 7px 12px;
+  font-size: 1em;
+  outline: none;
+  min-width: 0;
+}
+
+.profil-affectation-card {
+  background: #f6f8fc;
+  border-radius: 10px;
+  padding: 16px 18px 10px;
+  margin: 6px 0 3px;
+}
+
+.profil-aff-title {
+  font-weight: 700;
+  color: #243191;
+  margin-bottom: 12px;
+}
+
+.profil-aff-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px 36px;
+}
+
+.profil-label {
+  font-weight: 500;
+  color: #5e6ee0;
+}
+
+.profil-badge-encours {
+  display: inline-block;
+  background: #39c797;
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 18px;
+  font-size: 0.97em;
+}
+
+.profil-status-date {
+  color: #98a0af;
+}
+
+.profil-btn-deconnexion-v2 {
+  margin-bottom: 22px;
+  width: 40%;
+  height: 30%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-size: 1.05em;
+  font-weight: 300;
+  border: 1px solid #4250af;
+  color: #4250af;
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-sizing: border-box;
+}
+
+.profil-btn-deconnexion-v2 svg {
+  flex-shrink: 0;
+}
+
+.profil-btn-deconnexion-v2:hover {
+  background: #4250af;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(66, 80, 175, 0.09);
+}
+.profil-btn-deconnexion-v2:hover svg {
+  stroke: #fff;
+}
+
+.profil-error {
+  background: #ffe3e3;
+  color: #c92d2d;
+  padding: 8px 16px;
+  border-radius: 7px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.profil-success {
+  background: #c2ffc2;
+  color: #18721e;
+  padding: 8px 16px;
+  border-radius: 7px;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .profil-container {
+    width: 99vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .profil-container {
+    padding: 0;
+  }
+  .profil-header-bar,
+  .profil-main-card {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .profil-btn-deconnexion-v2 {
+    width: 100%;
+    font-size: 1.02em;
+    padding: 14px 9px;
+  }
+  .profil-champs-full {
+    width: 100%;
+  }
+  .profil-champs-inline {
+    gap: 8px;
+  }
+}
+@media (max-width: 600px) {
+  .profil-champs-table {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .profil-header-bar,
+  .profil-main-card {
+    padding: 10px 3vw;
+  }
+  .profil-avatar {
+    width: 46px;
+    height: 46px;
+  }
+  .profil-aff-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

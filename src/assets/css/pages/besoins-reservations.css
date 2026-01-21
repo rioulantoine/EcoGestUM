@@ -1,0 +1,494 @@
+/* ===== PAGE FORMULAIRE DE BESOINS ===== */
+
+.besoin-page-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.besoin-back-btn {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.besoin-form-wrapper {
+  background: #fff;
+  border-radius: 19px;
+  box-shadow: 0 2px 12px rgba(44, 44, 72, 0.09);
+  padding: 48px 32px 32px 32px;
+  max-width: 730px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.besoin-logo img {
+  max-width: 160px;
+  margin-bottom: 12px;
+}
+
+.besoin-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #2e2d5d;
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+
+.besoin-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.besoin-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.besoin-field label {
+  font-weight: 500;
+  color: #1f2121;
+  margin-bottom: 6px;
+}
+
+.besoin-field input,
+.besoin-field select,
+.besoin-field textarea {
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 9px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #2e2d5d;
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.besoin-field input:focus,
+.besoin-field select:focus,
+.besoin-field textarea:focus {
+  border-color: #2e2d5d;
+}
+
+.besoin-submit-btn {
+  background-color: #c85a2c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.18rem;
+  padding: 12px 0;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+  letter-spacing: 0.03em;
+  transition: background 0.2s;
+}
+
+.besoin-submit-btn:hover {
+  background-color: #a4481a;
+}
+
+/* Responsive formulaire besoins */
+@media (max-width: 600px) {
+  .besoin-form-wrapper {
+    padding: 20px 8px;
+    max-width: 95vw;
+  }
+
+  .besoin-title {
+    font-size: 1.16rem;
+  }
+
+  .besoin-logo img {
+    max-width: 110px;
+  }
+}
+
+/* ===== PAGE LISTE DES BESOINS ENSEIGNANTS ===== */
+
+.headerPages {
+  width: 100%;
+  background: linear-gradient(90deg, #e9edfa 65%, #ddeaf6 100%);
+  padding: 30px 0 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(35, 50, 170, 0.09);
+  margin-bottom: 18px;
+}
+
+.breadcrumb-besoins,
+.breadcrumb {
+  margin: 0 auto 8px auto;
+  font-size: 1.05rem;
+  background: rgba(255, 255, 255, 0.7);
+  display: inline-block;
+  padding: 7px 22px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(34, 50, 170, 0.08);
+  font-weight: 500;
+}
+
+.breadcrumbitem {
+  color: #24458c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.breadcrumbitem.active {
+  color: #d45336;
+}
+
+.breadcrumbseparator {
+  color: #9bb6e0;
+  margin: 0 7px;
+}
+
+.breadcrumb_title,
+.breadcrumbtitle {
+  font-size: 2.3em;
+  font-weight: 800;
+  color: #213198;
+  letter-spacing: 0.5px;
+  text-align: center;
+  line-height: 1.2;
+  margin: 22px 0 13px 0;
+}
+
+.main-content-besoins-enseignants {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px 50px 16px;
+}
+
+.besoins-filter-bar {
+  margin: 0 auto 24px auto;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.besoins-search-box,
+.besoins-categorie-select {
+  border: 1.2px solid #d8d9ee;
+  border-radius: 8px;
+  padding: 7px 15px;
+  font-size: 1.02em;
+  width: 170px;
+}
+
+.besoins-search-btn {
+  background: #c85a2c;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-weight: 600;
+  padding: 9px 18px;
+  font-size: 1.04em;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.besoins-search-btn:hover {
+  background: #a4481a;
+}
+
+.besoins-list {
+  max-width: 960px;
+  margin: 0 auto 24px auto;
+}
+
+.besoin-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(44, 44, 72, 0.07);
+  padding: 26px 22px 18px 22px;
+  margin-bottom: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.besoin-card-header {
+  font-size: 1.08em;
+  font-weight: 700;
+  color: #e85e36;
+  margin-bottom: 8px;
+}
+
+.besoin-card-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.besoin-card-img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(30, 30, 40, 0.09);
+  background: #f5f5f5;
+  flex-shrink: 0;
+}
+
+.besoin-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.besoin-card-titre {
+  font-size: 1.16em;
+  color: #233184;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.besoin-card-lieu {
+  color: #3681a6;
+  font-size: 0.99em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.besoin-card-raison {
+  font-size: 0.96em;
+  color: #3e3e3e;
+  margin-bottom: 13px;
+}
+
+.besoin-card-btn {
+  background: #e85e36;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-weight: 600;
+  font-size: 1.03em;
+  cursor: pointer;
+  transition: background 0.18s;
+  width: fit-content;
+}
+
+.besoin-card-btn:hover {
+  background: #d45336;
+}
+
+.besoins-pagination {
+  text-align: center;
+  margin: 28px 0 0 0;
+}
+
+.besoins-pagination-btn {
+  background: #ddd;
+  color: #232369;
+  border-radius: 7px;
+  margin: 0 2px;
+  padding: 7px 14px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background 0.15s, color 0.15s;
+  border: none;
+}
+
+.besoins-pagination-btn.active,
+.besoins-pagination-btn:hover {
+  background: #232370;
+  color: #fff;
+}
+
+/* Responsive liste besoins */
+@media (max-width: 850px) {
+  .besoins-list,
+  .main-content-besoins-enseignants {
+    max-width: 99vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .besoin-card-main {
+    flex-direction: column;
+  }
+
+  .besoin-card-img {
+    width: 99vw;
+    max-width: 220px;
+    height: 70px;
+  }
+}
+
+.no-besoins-msg {
+  text-align: center;
+  color: #888;
+  font-size: 1.2em;
+  margin: 48px 0 48px 0;
+}
+
+/* ===== PAGE RÉSERVATIONS ===== */
+
+.reservation-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 50px;
+  width: 100%;
+  align-items: center;
+}
+
+.reservation-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(60, 66, 90, 0.08);
+  padding: 24px 38px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  min-height: 140px;
+  width: 75%;
+  max-width: 850px;
+  margin: 15px auto 25px auto;
+  justify-content: space-between;
+  transition: box-shadow 0.25s;
+}
+
+.reservation-card:hover {
+  box-shadow: 0 4px 24px rgba(35, 50, 170, 0.16);
+}
+
+.reservation-img {
+  width: 148px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 16px;
+  box-shadow: 0 2px 10px #e5e6e7;
+}
+
+.reservation-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.reservation-title {
+  color: #234285;
+  font-size: 1.13em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.reservation-attr {
+  font-size: 1.04em;
+  color: #404e62;
+  margin-bottom: 2px;
+}
+
+.reservation-id {
+  color: #394151;
+  font-size: 0.97em;
+  margin-top: 5px;
+}
+
+.btns-res-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.btn-annuler-res {
+  background: #d4451b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08em;
+  padding: 13px 27px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.17s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px #d4451b48;
+}
+
+.btn-annuler-res:hover {
+  background: #b9380d;
+}
+
+.btn-recuperer-res {
+  background: #24458c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08em;
+  padding: 13px 27px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px #24458c44;
+}
+
+.btn-recuperer-res:hover {
+  background: #102857;
+}
+
+/* Responsive réservations */
+@media (max-width: 900px) {
+  .reservation-card {
+    width: 95%;
+    padding: 16px 8px;
+    gap: 15px;
+  }
+
+  .reservation-img {
+    width: 96px;
+    height: 68px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reservation-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .btns-res-row {
+    align-items: stretch;
+  }
+
+  .reservation-img {
+    margin-right: 0;
+    width: 90vw;
+    height: 38vw;
+    max-width: 330px;
+    max-height: 150px;
+  }
+}
+
+.res-empty {
+  text-align: center;
+  color: #ff0000;
+  font-size: 1.2em;
+  background: #ffc2c2;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 24px 18px;
+  margin: 48px auto 60px auto;
+  box-shadow: 0 1px 8px #24458c16;
+  max-width: 420px;
+  letter-spacing: 0.5px;
+}

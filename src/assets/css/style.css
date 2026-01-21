@@ -1,0 +1,47 @@
+/* VARIABLES & BASE */
+@import url("./pages/variables.css");
+
+/* HEADER / FOOTER */
+@import url("./pages/header-footer.css");
+
+/* ACCUEIL */
+@import url("./pages/accueil.css");
+
+/* CONNEXION / INSCRIPTION + MESSAGES */
+@import url("./pages/connexion-inscription.css");
+
+/* POLITIQUE */
+@import url("./pages/politique.css");
+
+/* STATISTIQUES & BREADCRUMB */
+@import url("./pages/statistiques-pages.css");
+
+/* ESPACE REPRISE + CARTE LIEUX */
+@import url("./pages/espace-reprise-carte.css");
+
+/* PROFIL UTILISATEUR */
+@import url("./pages/profil.css");
+
+/* EVENEMENTS */
+@import url("./pages/evenement.css");
+
+/* OBJETS & POPUPS OBJET */
+@import url("./pages/objets.css");
+
+/* FORMULAIRES + NOTIFS + OBJECTIFS + RAPPORTS + COMMUNICATIONS */
+@import url("./pages/formulaires-notifications.css");
+
+/* MESSAGERIE */
+@import url("./pages/messagerie.css");
+
+/* DASHBOARD / COMMUNICATIONS OFFICIELLES */
+@import url("./pages/dashboard-communications.css");
+
+/* BESOINS & RESERVATIONS (à compléter avec tes blocs) */
+@import url("./pages/besoins-reservations.css");
+
+/* DASHBOARD GENERAL */
+@import url("./pages/dashboard.css");
+
+/* ERREUR - PAGE 404 */
+@import url("./pages/erreur.css");

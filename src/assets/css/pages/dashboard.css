@@ -1,0 +1,2450 @@
+/* ===== PAGE DASHBOARD ET + ===== */
+.button-dashboard {
+  background-color: #fff;
+  font-size: 15px;
+  font-weight: 550;
+  font-family: "Poppins-Bold", Arial, sans-serif;
+  padding: 7px 15px 7px 15px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  text-align: center;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.button-dashboard a {
+  text-decoration: none;
+  color: #27306d;
+}
+
+.button-dashboard:hover {
+  background: #f5f5f5;
+  color: #183070;
+}
+
+/* ===== MENU BURGER ===== */
+.menu-burger-zone {
+  position: fixed;
+  cursor: pointer;
+  top: 60px; /* hauteur exacte de ton header */
+  width: auto;
+  z-index: 1101;
+  margin-left: 16px; /* si tu veux le burger décalé à gauche */
+}
+
+.menu-icon {
+  font-size: 2.3em;
+  color: #fff;
+  background: #27306d;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 7px 14px;
+  border: none;
+  margin-top: 6px;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 46px; /* juste sous le burger */
+  left: 0;
+  width: 210px;
+  background: #27306d;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px #27306d36;
+  display: none;
+  z-index: 1102;
+}
+.menu-toggle:checked ~ .menu-dropdown {
+  display: block;
+}
+.menu-toggle {
+  display: none;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+}
+.menu-list li {
+  margin-bottom: 12px;
+}
+.menu-list a {
+  color: #fff;
+  font-weight: bold;
+  background: #384079;
+  padding: 13px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: block;
+  transition: background 0.18s;
+}
+.menu-list a:hover {
+  background: #d85a2c;
+}
+
+/* ===== FIN Menu Burger ===== */
+/*===== DASHBOARD GENERAL =====*/
+.dashboard-main-content {
+  transition: margin-left 0.22s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90vw;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Stat top responsive */
+.dashboard-top,
+.stats-cards {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.stats-cards {
+  margin-bottom: 12px;
+}
+.stat-card {
+  background: #c7c7c7;
+  border-radius: 14px;
+  box-shadow: 0 1px 8px #27306d12;
+  padding: 22px 48px;
+  min-width: 240px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 30vw;
+  box-sizing: border-box;
+}
+.stat-title {
+  color: #27306d;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.1em;
+  font-weight: bold;
+  color: #d85a2c;
+  margin-bottom: 7px;
+}
+.stat-desc {
+  font-size: 1.01em;
+  color: #222;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .stat-card {
+    width: 45vw;
+    min-width: 220px;
+  }
+}
+@media (max-width: 900px) {
+  .stat-card {
+    width: 97vw;
+    min-width: unset;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .stats-cards,
+  .dashboard-top {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .stat-card {
+    width: 98vw;
+    min-width: unset;
+    max-width: 99vw;
+    padding: 12px 3vw;
+  }
+}
+
+/* Cartes rapport & dashboard responsive */
+.dashboard-rapports {
+  background: #111;
+  border-radius: 13px;
+  padding: 28px 16px;
+  max-width: 950px;
+  margin: 44px auto 28px auto;
+  width: 99vw;
+  box-sizing: border-box;
+}
+.rapports-list-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px 32px;
+}
+@media (max-width: 800px) {
+  .dashboard-rapports {
+    padding: 14px 6px;
+    max-width: 100vw;
+    min-width: unset;
+  }
+  .rapports-list-cols {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* Cards bas de dashboard responsive */
+.dashboard-bas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 34px;
+  justify-content: center;
+}
+.dashboard-card {
+  background: #fff;
+  border: 2px solid #27306d;
+  border-radius: 12px;
+  padding: 20px 26px;
+  flex: 1 1 320px;
+  margin: 10px;
+  min-width: 235px;
+  max-width: 99vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+.card-title {
+  font-weight: bold;
+  color: #27306d;
+  margin-bottom: 9px;
+}
+.card-desc {
+  margin-bottom: 18px;
+  font-size: 1em;
+  color: #333;
+}
+.dashboard-btn {
+  background: #fff;
+  color: #27306d;
+  border: 2px solid #27306d;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 8px 26px;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none !important;
+  caret-color: transparent;
+}
+.dashboard-btn.best-stat:hover {
+  background: #253180;
+  color: #fff;
+}
+.dashboard-btn.comm-btn:hover {
+  background: #d85a2c;
+  color: #fff;
+}
+
+.dashboard-card.card-comm {
+  background: #fff;
+  color: #d85a2c;
+  border: 2px solid #d85a2c;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.12em;
+  padding: 12px 38px;
+  display: block;
+  margin: 22px auto 0 auto;
+  min-width: 100px;
+  box-shadow: none;
+  text-align: center;
+  transition: background 0.18s, color 0.14s, border-color 0.15s;
+  cursor: pointer;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+.comm-title {
+  color: #d85a2c;
+  font-weight: bold;
+  font-size: 1.18em;
+}
+.comm-desc {
+  color: #333;
+  text-align: center;
+  font-size: 1.06em;
+  margin-bottom: 12px;
+}
+.comm-btn {
+  border-color: #d85a2c;
+  color: #d85a2c;
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .dashboard-card.card-comm {
+    min-width: 90vw;
+    max-width: 95vw;
+    padding: 16px 20px;
+    margin: 10px auto;
+  }
+  .comm-title {
+    font-size: 1.1em;
+  }
+  .comm-desc {
+    font-size: 1em;
+  }
+  .comm-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+}
+@media (max-width: 600px) {
+  .dashboard-card.card-comm {
+    padding: 12px 16px;
+    margin: 8px auto;
+  }
+  .comm-title {
+    font-size: 1.05em;
+  }
+  .comm-desc {
+    font-size: 0.95em;
+  }
+}
+@media (max-width: 600px) {
+  .dashboard-bas {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dashboard-card {
+    min-width: 95vw;
+    max-width: 99vw;
+    padding: 10px 3vw;
+    box-sizing: border-box;
+  }
+}
+
+/* ===== DASHBOARD STYLES ===== */
+.dashboard-main-content {
+  transition: margin-left 0.22s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 90%;
+}
+.dashboard-top {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.stats-cards {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+.stat-card {
+  background: #c7c7c7;
+  border-radius: 14px;
+  box-shadow: 0 1px 8px #27306d12;
+  padding: 22px 48px;
+  min-width: 320px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stat-title {
+  color: #27306d;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.1em;
+  font-weight: bold;
+  color: #d85a2c;
+  margin-bottom: 7px;
+}
+.stat-desc {
+  font-size: 1.01em;
+  color: #222;
+  text-align: center;
+}
+
+.impact-value {
+  font-size: 2.4em;
+  font-weight: bold;
+}
+.impact-btn {
+  background: #fff;
+  color: #27306d;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 22px;
+  font-weight: bold;
+  font-size: 1.03em;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+/* Section rapports */
+.dashboard-rapports {
+  background: #111;
+  border-radius: 13px;
+  padding: 28px 28px;
+  max-width: 950px;
+  margin: 44px auto 28px auto;
+}
+
+.rapports-title {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.32em;
+  margin-bottom: 20px;
+}
+
+.rapports-list-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px 32px;
+}
+
+.rapport-item {
+  background: #d85a2c;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.19em;
+  border-radius: 16px;
+  text-decoration: none;
+  padding: 30px 65px 30px 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 3px 18px #d85a2c25;
+  border: none;
+  transition: background 0.18s;
+  min-height: 66px;
+}
+
+.dashboard-btn-gen {
+  background: #1c205a;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.19em;
+  border-radius: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px 0;
+  min-height: 66px;
+  width: 100%;
+  box-shadow: 0 2px 10px #1c205a18;
+  border: none;
+  transition: background 0.18s;
+  text-align: center;
+}
+.rapport-item:hover {
+  background: #a03d13;
+}
+
+.dashboard-btn-gen:hover {
+  background: #1b204e;
+}
+
+.rapport-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.rapport-icon.pdf {
+  left: 22px;
+  background: url("data:image/svg+xml;utf8,<svg ... />") center/contain
+    no-repeat;
+}
+.rapport-icon.dl {
+  right: 21px;
+  background: url("data:image/svg+xml;utf8,<svg ... />") center/contain
+    no-repeat;
+}
+
+@media (max-width: 800px) {
+  .dashboard-rapports {
+    padding: 18px 8px;
+    max-width: 97vw;
+  }
+  .rapports-list-cols {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.dashboard-bas {
+  display: flex;
+  gap: 22px;
+  margin-top: 34px;
+}
+.dashboard-card {
+  background: #fff;
+  border: 2px solid #27306d;
+  border-radius: 12px;
+  padding: 20px 26px;
+  min-width: 240px;
+  flex: 1;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card-title {
+  font-weight: bold;
+  color: #27306d;
+  margin-bottom: 9px;
+}
+.card-desc {
+  margin-bottom: 18px;
+  font-size: 1em;
+  color: #333;
+}
+.dashboard-btn {
+  background: #fff;
+  color: #27306d;
+  border: 2px solid #27306d;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 8px 26px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.dashboard-btn.best-stat:hover {
+  background: #253180;
+  color: #fff;
+}
+.dashboard-btn.comm-btn:hover {
+  background: #d85a2c;
+  color: #fff;
+}
+
+.dashboard-card.card-comm {
+  background: #fff;
+  color: #d85a2c;
+  border: 2px solid #d85a2c;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.12em;
+  padding: 12px 38px;
+  display: block;
+  margin: 22px auto 0 auto;
+  min-width: 100px;
+  box-shadow: none;
+  text-align: center;
+  transition: background 0.18s, color 0.14s, border-color 0.15s;
+  cursor: pointer;
+  margin: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.comm-title {
+  color: #d85a2c;
+  font-weight: bold;
+  font-size: 1.18em;
+}
+
+.comm-btn {
+  border-color: #d85a2c;
+  color: #d85a2c;
+  background: #fff;
+}
+
+.comm-desc {
+  color: #333;
+  text-align: center;
+  font-size: 1.06em;
+  margin-bottom: 12px;
+}
+
+.communications-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #2b2e5e 0%, #1c205a 100%);
+  text-align: center;
+  color: white;
+}
+
+.communications-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.communications-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.communications-btn {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 13px 38px;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.communications-btn:hover {
+  background-color: var(--color-primary);
+}
+/* ===== COMMUNICATIONS OFFICIELLES ===== */
+
+.communications-container {
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.no-communications {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.communication-card {
+  background: white;
+  border-left: 5px solid #c85a2c;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.communication-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.communication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.communication-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2b2e5e;
+  margin: 0;
+  flex: 1;
+}
+
+.communication-date {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.communication-content {
+  margin-bottom: 1.5rem;
+}
+
+.communication-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.communication-footer {
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.communication-author {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.author-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.author-name {
+  color: #c85a2c;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .communications-container {
+    margin: 2rem auto;
+    gap: 1.5rem;
+  }
+
+  .communication-card {
+    padding: 1.5rem;
+  }
+
+  .communication-header {
+    flex-direction: column;
+  }
+
+  .communication-title {
+    font-size: 1.3rem;
+  }
+
+  .communication-date {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .communications-container {
+    padding: 0 1rem;
+  }
+
+  .communication-card {
+    padding: 1rem;
+    border-left-width: 4px;
+  }
+
+  .communication-title {
+    font-size: 1.1rem;
+  }
+
+  .communication-date {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* ===== COMMUNICATION FORM ===== */
+
+.communication-form-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2b2e5e;
+  margin-bottom: 2rem;
+  border-bottom: 3px solid #c85a2c;
+  padding-bottom: 1rem;
+}
+
+.communication-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  caret-color: black;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #2b2e5e;
+  font-size: 1rem;
+}
+
+.form-input,
+.form-textarea {
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #c85a2c;
+  box-shadow: 0 0 8px rgba(200, 90, 44, 0.2);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 200px;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #f5f5f5;
+  border: 2px dashed #c85a2c;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  color: #c85a2c;
+}
+
+.file-label:hover {
+  background-color: rgba(200, 90, 44, 0.1);
+}
+
+.file-icon {
+  font-size: 1.3rem;
+}
+
+.btn-envoyer {
+  background-color: #c85a2c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(200, 90, 44, 0.3);
+}
+
+.btn-envoyer:hover {
+  background-color: #b14f25;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(200, 90, 44, 0.4);
+}
+
+.btn-envoyer:active {
+  transform: translateY(0);
+}
+
+/* ===== COMMUNICATIONS LIST ===== */
+
+.communications-list-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.communications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.communication-item {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-left: 4px solid #c85a2c;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.communication-item:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.communication-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.communication-item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2b2e5e;
+  margin: 0;
+  flex: 1;
+}
+
+.communication-item-date {
+  background-color: #e8e8e8;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+.communication-item-description {
+  color: #555;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.communication-item-footer {
+  padding-top: 0.8rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+.communication-author {
+  color: #c85a2c;
+  font-weight: 500;
+}
+
+.no-data {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .communication-form-section,
+  .communications-list-section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .communication-item-header {
+    flex-direction: column;
+  }
+
+  .communication-item-date {
+    align-self: flex-start;
+  }
+
+  .btn-envoyer {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .communication-form-section,
+  .communications-list-section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .form-textarea {
+    min-height: 150px;
+  }
+
+  .btn-envoyer {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+.communication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.communication-title-wrapper {
+  flex: 1;
+}
+
+.communication-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+.btn-delete-link {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  display: inline-block;
+  border: none;
+}
+
+.btn-delete-link:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .communication-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-delete-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ===== RAPPORT FORM SECTION ===== */
+
+.rapport-form-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.rapport-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.rapport-form .form-group:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+.rapport-form .form-group:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.form-select {
+  padding: 0.6rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: border-color 0.3s;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #c85a2c;
+}
+
+.btn-generer {
+  grid-column: 1 / -1;
+  background-color: #c85a2c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-generer:hover {
+  background-color: #b14f25;
+  transform: translateY(-2px);
+}
+
+/* ===== RAPPORTS HISTORY SECTION ===== */
+
+.rapports-history-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rapports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rapport-card-item {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-left: 4px solid #c85a2c;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.rapport-card-item:hover {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rapport-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.rapport-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2b2e5e;
+  margin: 0;
+  flex: 1;
+}
+
+.rapport-card-date {
+  background-color: #e8e8e8;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #666;
+  white-space: nowrap;
+}
+.rapport-card-description {
+  color: #555;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.rapport-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.rapport-card-periode {
+  color: #666;
+  font-weight: 500;
+}
+
+.btn-telecharger-rapport {
+  background-color: #0066cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn-telecharger-rapport:hover {
+  background-color: #0052a3;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .rapport-form-section,
+  .rapports-history-section {
+    padding: 1.5rem;
+  }
+
+  .rapport-form {
+    grid-template-columns: 1fr;
+  }
+
+  .rapport-form .form-group:nth-child(2) {
+    grid-column: 1;
+  }
+
+  .rapport-form .form-group:nth-child(3) {
+    grid-column: 1;
+  }
+
+  .btn-generer {
+    grid-column: 1;
+  }
+
+  .rapport-card-header {
+    flex-direction: column;
+  }
+
+  .rapport-card-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-telecharger-rapport {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .rapport-form-section,
+  .rapports-history-section {
+    padding: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .form-textarea {
+    min-height: 150px;
+  }
+
+  .btn-generer {
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+.impact-stats-container {
+  background: var(--color-gray-light, #f5f5f5);
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Cartes du résumé principal : même taille et alignement horizontal */
+.stats-summary {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+  margin-bottom: 32px;
+}
+.stats-summary .stats-card {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 120px;
+  max-height: 160px;
+  border-radius: 12px;
+  padding: 18px 14px;
+  box-sizing: border-box;
+}
+.stats-card.stats-white-card.stats-received-objects {
+  background-color: #e2f0ff;
+  box-shadow: 1px solid var(--color-border, #e0e0e0);
+}
+
+/* Cartes colorées avec variables */
+.stats-black-card {
+  background: var(--color-dark, #1f2121);
+  color: var(--color-white, #fff);
+}
+.stats-orange-card {
+  background: var(--color-primary, #c85a2c);
+  color: var(--color-white, #fff);
+}
+.stats-blue-card {
+  background: #e2f0ff;
+  color: var(--color-header, #2e2d5d);
+}
+.stats-grey-card {
+  background: var(--color-border, #e0e0e0);
+  color: var(--color-header, #2e2d5d);
+}
+.stats-white-card {
+  background: var(--color-white, #fff);
+  color: var(--color-header, #2e2d5d);
+}
+
+.stats-value {
+  font-size: 2.1em;
+  font-weight: bold;
+}
+.stats-label {
+  font-size: 1em;
+  display: block;
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+/* Section détails */
+.stats-details {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-direction: row;
+}
+
+.stats-details-part {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+/* Catégories recyclage */
+.stats-category-recycling {
+  background: var(--color-white, #fff);
+  border-radius: 12px;
+  padding: 18px 14px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-title {
+  font-weight: bold;
+  color: var(--color-header, #2e2d5d);
+  font-size: 1.1em;
+}
+.category-list {
+  margin: 12px 0 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cat-item {
+  font-size: 1.2em;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.cat-item.mobiliers {
+  color: #74c947;
+}
+.cat-item.informatique {
+  color: #2b75f6;
+}
+.cat-item.outils {
+  color: #ffb946;
+}
+.cat-item.livres-et-fournitures {
+  color: #f26d50;
+}
+.cat-item.tout-categorie {
+  color: #a57ee3;
+}
+.cat-count {
+  font-weight: bold;
+}
+
+.recycle-piechart {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background: url("img/piechart-stat.png") no-repeat center center / contain;
+}
+
+.stats-donors,
+.stats-received-objects {
+  background: var(--color-white, #fff);
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.donors-title,
+.received-title {
+  font-weight: bold;
+  color: var(--color-header, #2e2d5d);
+  font-size: 1.05em;
+}
+.donors-count,
+.received-count {
+  font-size: 2em;
+  color: var(--color-header, #2e2d5d);
+}
+.received-subtext {
+  font-size: 0.92em;
+  color: var(--color-gray, #77787c);
+  margin-top: 6px;
+}
+
+.stats-monthly-objects {
+  background: var(--color-white, #fff);
+  border-radius: 12px;
+  padding: 22px 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.month-title {
+  font-size: 1.18em;
+  font-weight: bold;
+  color: var(--color-header, #2e2d5d);
+}
+.month-value {
+  font-size: 2em;
+  color: var(--color-primary, #c85a2c);
+  margin: 7px 0;
+}
+.month-label {
+  font-weight: bold;
+  color: var(--color-header, #2e2d5d);
+  margin-bottom: 6px;
+}
+.month-desc {
+  font-size: 1em;
+  color: var(--color-header, #2e2d5d);
+}
+
+#repartitionChart {
+  margin-top: 20px;
+}
+@media (max-width: 960px) {
+  .impact-stats-container {
+    max-width: 98vw;
+    padding: 16px;
+  }
+  .stats-summary,
+  .stats-details {
+    flex-direction: column;
+  }
+  .stats-summary .stats-card,
+  .stats-category-recycling,
+  .stats-donors,
+  .stats-received-objects,
+  .stats-month {
+    min-width: 98vw;
+    max-width: 98vw;
+  }
+}
+/* ===== PAGE CHEFDEP ACCEUIL ===== */
+/* ========================================
+   DASHBOARD CHEF DEPARTEMENT - ACCUEIL
+   ======================================== */
+
+.dashboard-main-content {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f5f5f5;
+}
+
+/* ========================================
+   SECTION DU HAUT - MOIS + STATS
+   ======================================== */
+
+.dashboard-top {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+/* Navigation mois */
+.timeline-nav-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.timeline-nav {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.timeline-nav:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+/* Statistiques principales */
+.stats-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+}
+
+.stat-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid;
+  position: relative;
+  background: white;
+}
+
+.stat-icon.red {
+  border-color: #ff6b6b;
+}
+
+.stat-icon.blue {
+  border-color: #4dabf7;
+}
+
+.stat-icon.orange {
+  border-color: #ffa94d;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.stat-desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+/* Statistiques principales */
+.stats-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Couleur de fond selon le type */
+.stat-card:nth-child(1) {
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.stat-card:nth-child(2) {
+  background: rgba(77, 171, 247, 0.1);
+}
+
+.stat-card:nth-child(3) {
+  background: rgba(255, 169, 77, 0.1);
+}
+
+.stat-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid;
+  position: relative;
+  background: white;
+}
+
+.stat-icon.red {
+  border-color: #ff6b6b;
+}
+
+.stat-icon.blue {
+  border-color: #4dabf7;
+}
+
+.stat-icon.orange {
+  border-color: #ffa94d;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.stat-desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ========================================
+   SECTION MILIEU - RÉPARTITION + IMPACT
+   ======================================== */
+.dashboard-middle {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.repartition-section,
+.impact-card {
+  flex: 1;
+}
+.dashboard-middle {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+/* Répartition des objets */
+.repartition-section {
+  background: #1e293b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-title-dark {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.repartition-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.chart-container {
+  width: 200px;
+  height: 200px;
+}
+
+/* Légende du graphique */
+.chart-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 15px;
+}
+
+.legend-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-item[data-color="0"] .legend-bullet {
+  background: #4dabf7;
+}
+
+.legend-item[data-color="1"] .legend-bullet {
+  background: #51cf66;
+}
+
+.legend-item[data-color="2"] .legend-bullet {
+  background: #ffd43b;
+}
+
+.legend-item[data-color="3"] .legend-bullet {
+  background: #ff6b6b;
+}
+
+.legend-item[data-color="4"] .legend-bullet {
+  background: #a78bfa;
+}
+
+.legend-item[data-color="5"] .legend-bullet {
+  background: #f472b6;
+}
+
+.legend-label {
+  flex: 1;
+}
+
+.legend-value {
+  margin-left: auto;
+  font-weight: 600;
+  min-width: 35px;
+  text-align: right;
+  font-size: 16px;
+}
+
+/* Impact total */
+.impact-card {
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  padding: 40px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.impact-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.impact-number {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1;
+}
+
+.impact-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+/* ========================================
+   BAS DE PAGE DU DASHBOARD
+   ======================================== */
+
+.dashboard-bas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.dashboard-card {
+  padding: 30px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-comm {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 0.3px;
+}
+
+.comm-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+.comm-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.95;
+}
+
+/* Boutons */
+.dashboard-btn {
+  background: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.best-stat,
+.btn-impact {
+  color: #334155;
+}
+
+.comm-btn {
+  color: #dc2626;
+}
+
+.dashboard-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1200px) {
+  .dashboard-middle {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-main-content {
+    padding: 15px;
+  }
+
+  .dashboard-top {
+    padding: 15px;
+  }
+
+  .dashboard-bas {
+    grid-template-columns: 1fr;
+  }
+
+  .repartition-section {
+    padding: 25px;
+  }
+
+  .repartition-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .chart-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .impact-number {
+    font-size: 56px;
+  }
+
+  .impact-card {
+    padding: 25px;
+  }
+
+  .stat-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .timeline-nav-container {
+    flex-direction: column;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-nav {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .stat-title {
+    font-size: 13px;
+  }
+
+  .stat-desc {
+    font-size: 11px;
+  }
+
+  .section-title-dark {
+    font-size: 18px;
+  }
+
+  .impact-number {
+    font-size: 48px;
+  }
+
+  .card-title,
+  .comm-title {
+    font-size: 16px;
+  }
+
+  .card-desc,
+  .comm-desc {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   BAS DE PAGE DU DASHBOARD
+   ======================================== */
+.dashboard-bas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.dashboard-card {
+  padding: 25px;
+  border-radius: 12px;
+  background: white;
+  border: 2px solid #282f63;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card-comm {
+  background: white;
+  border: 2px solid #d4451b;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 0.3px;
+  color: #333;
+}
+
+.comm-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: auto;
+  color: #333;
+  flex: 1;
+}
+
+.comm-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: auto;
+  color: #333;
+  flex: 1;
+}
+
+.card-desc strong {
+  font-weight: 700;
+  color: #333;
+}
+
+/* Boutons */
+.dashboard-btn {
+  background: white;
+  border: 2px solid;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.best-stat {
+  color: #282f63;
+  border-color: #282f63;
+}
+
+.comm-btn {
+  color: #d4451b;
+  border-color: #d4451b;
+}
+
+.dashboard-btn:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-bas {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    padding: 20px;
+  }
+}
+
+/*Page dashboard Inventaire chef de departement */
+.invdep-main-content {
+  padding: 32px 0 0 0;
+  background: #f3f5fb;
+  min-height: 100vh;
+}
+
+.invdep-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.invdep-title {
+  font-size: 2em;
+  color: #273673;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.invdep-searchzone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+}
+.invdep-searchbar {
+  width: 340px;
+  padding: 9px 18px;
+  font-size: 1em;
+  border: 1px solid #dadada;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+.invdep-search-btn {
+  background: #273673;
+  color: #fff;
+  border: none;
+  padding: 9px 18px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.invdep-table-section {
+  width: 95%;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 1px 9px #1b296321;
+}
+.invdep-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+.invdep-table th,
+.invdep-table td {
+  padding: 12px 10px;
+  font-size: 1em;
+}
+.invdep-table th {
+  background: #f5f6fb;
+  color: #273673;
+  font-weight: bold;
+}
+.invdep-table tbody tr {
+  border-bottom: 1px solid #e3e3e3;
+}
+.invdep-cat {
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1em;
+  display: inline-block;
+}
+.invdep-cat-mobiliers {
+  background: #e7ffee;
+  color: #23a363;
+}
+.invdep-cat-informatique {
+  background: #ffe2ca;
+  color: #f58025;
+}
+.invdep-cat-outils {
+  background: #fee1f8;
+  color: #c950c9;
+}
+.invdep-cat-livres--fournitures {
+  background: #e2d7fd;
+  color: #7c46fa;
+}
+
+.invdep-etat-neuf {
+  color: #23a363;
+  font-weight: bold;
+}
+.invdep-etat-bon-état {
+  color: #00a6da;
+  font-weight: bold;
+}
+.invdep-etat-très-bon-état {
+  color: #41b35d;
+  font-weight: bold;
+}
+.invdep-etat-mauvais-état {
+  color: #d62f2f;
+  font-weight: bold;
+}
+
+.invdep-pagination {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.invdep-pag-btn {
+  display: inline-block;
+  border: none;
+  background: #edf0fa;
+  color: #273673;
+  padding: 9px 15px;
+  margin: 0 2px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.13s;
+}
+.invdep-pag-btn.current,
+.invdep-pag-btn:hover {
+  background: #273673;
+  color: #fff;
+}
+
+.invdep-searchzone {
+  margin: 24px 0 34px 0;
+  display: flex;
+  justify-content: center;
+}
+.invdep-searchzone form {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 14px 18px 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 3px 14px rgba(100, 130, 180, 0.06);
+  flex-wrap: wrap;
+}
+.invdep-searchbar {
+  padding: 10px 14px;
+  border: 1.5px solid #b4b8e7;
+  border-radius: 7px;
+  font-size: 1em;
+  min-width: 180px;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.invdep-searchbar:focus {
+  border-color: #28426d;
+  outline: none;
+}
+.invdep-etat-select,
+.invdep-categorie-select {
+  padding: 8px 12px;
+  border-radius: 7px;
+  border: 1px solid #dbeafe;
+  background: #fff;
+  font-size: 0.97em;
+}
+.invdep-search-btn {
+  background: #c85a2c;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 24px;
+  cursor: pointer;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(200, 90, 44, 0.08);
+  transition: background 0.18s, transform 0.16s;
+}
+.invdep-search-btn:hover {
+  background: #a74117;
+  transform: translateY(-1px) scale(1.03);
+}
+
+/* Page Historique des OP de recyclage */
+
+/* ---- Historique des opérations de recyclage ---- */
+.histop-main-content {
+  background: #f4f7fa;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgb(30 40 80 / 10%);
+  padding: 32px;
+  margin: 32px auto;
+  max-width: 980px;
+}
+
+.histop-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.histop-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #19366a;
+}
+
+.histop-searchzone {
+  display: flex;
+  flex-direction: row;
+  gap: 9px;
+}
+
+.histop-searchbar,
+.histop-categorie-select {
+  padding: 6px 12px;
+  border: 1px solid #c9d4e3;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.histop-search-btn {
+  background: #3ca94d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.histop-search-btn:hover {
+  background: #327a3c;
+}
+
+/* Table operations */
+.histop-table-section {
+  margin-top: 25px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgb(30 40 80 / 7%);
+  padding: 18px;
+}
+
+.histop-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.histop-table thead th {
+  background: #19366a;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-bottom: 2px solid #dfedfb;
+}
+
+.histop-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #ebf0f8;
+  color: #2e3d55;
+}
+.histop-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Pastilles type d'objet */
+.histop-type {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 18px;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin: 2px 3px 2px 0;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.histop-type-mobiliers {
+  background: #27ae60;
+}
+.histop-type-informatique {
+  background: #e67e22;
+}
+.histop-type-outils {
+  background: #e74c3c;
+}
+.histop-type-livres-et-fournitures {
+  background: #f7ca18;
+  color: #223;
+}
+.histop-type-toute-catégorie {
+  background: #8e44ad;
+}
+
+.histop-type:hover {
+  opacity: 0.85;
+}
+
+/* Pagination */
+.histop-pagination {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.histop-pag-btn {
+  padding: 3px 13px;
+  background: #e5ecf7;
+  color: #19366a;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: background 0.17s;
+}
+
+.histop-pag-btn.current,
+.histop-pag-btn:hover {
+  background: #19366a;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .histop-main-content {
+    padding: 7vw 2vw;
+  }
+  .histop-title {
+    font-size: 1.3rem;
+  }
+  .histop-searchzone {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .histop-table-section {
+    padding: 2vw;
+  }
+  .histop-table {
+    font-size: 0.95rem;
+  }
+}

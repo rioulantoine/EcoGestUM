@@ -1,0 +1,79 @@
+/* ===== VARIABLES CSS ===== */
+:root {
+  --color-primary: #c85a2c;
+  --color-primary-dark: #b14f25;
+  --color-dark: #1f2121;
+  --color-white: #ffffff;
+  --color-gray-light: #f5f5f5;
+  --color-gray: #77787c;
+  --color-border: #e0e0e0;
+  --color-header: #2e2d5d;
+  --color-secondary-blue: #1b2963;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --transition-fast: 0.18s;
+  --transition-normal: 0.3s;
+  --box-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --box-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--color-gray-light);
+}
+
+body {
+  caret-color: transparent;
+}
+
+/* ===== UTILITAIRES RÉUTILISABLES ===== */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-md);
+  padding: 10px 24px;
+  font-weight: 500;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.card-base {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-sm);
+  overflow: hidden;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
