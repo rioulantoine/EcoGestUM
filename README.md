@@ -13,7 +13,7 @@ L'objectif principal est de développer une application qui centralise la gestio
 
 skippez tout sauf type of project ou vous mettez "project"
 
-3 - Ouvrez xampp, lancer apache aisni que phpMyAdmin et importez le script de création dans le dossier SQL puis celui d'insertion
+3 - Ouvrez xampp, lancer apache ainsi que phpMyAdmin et importez le script de création dans le dossier SQL puis celui d'insertion
 
 # Projet SAE – Application Web de Gestion
 
